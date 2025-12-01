@@ -1,16 +1,32 @@
 package structure;
 
-public class Choice extends Base
+import edit.Edit;
+import utility.Named;
+
+public class Choice extends Named
 {
     Choice next;
 
-    Choice()
+    public Choice(String name)
     {
+        super(name);
         this.next = null;
     }
 
-    void  append(Choice choice)
+    public void  add(Choice choice)
     {
-        this.next = choice;
+        if (this.next != null)
+        {
+            this.next.add(choice);
+        }
+        else
+        {
+            this.next = choice;
+        }
+    }
+
+    public Edit make()
+    {
+        return null;
     }
 }

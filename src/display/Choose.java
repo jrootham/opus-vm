@@ -4,7 +4,7 @@ import structure.Choice;
 
 import javax.swing.*;
 
-public class Choose extends Base
+public class Choose
 {
     structure.Choose choose;
 
@@ -17,5 +17,7 @@ public class Choose extends Base
     {
         JPanel panel = new JPanel();
         JButton button = new JButton(this.choose.getName());
+
+        return panel;
     }
 }
