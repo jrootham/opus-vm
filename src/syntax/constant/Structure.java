@@ -30,6 +30,8 @@ public class Structure extends syntax.Structure
 
     public JPanel display()
     {
+        JPanel result = new JPanel();
 
+        return result;
     }
 }

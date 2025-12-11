@@ -1,11 +1,9 @@
 package syntax.symbol;
 
 import symbol.Table;
-import syntax.Edit;
-
 import javax.swing.*;
 
-public class Structure extends syntax.Structure
+public abstract class Structure extends syntax.Structure
 {
     Table   table;
 

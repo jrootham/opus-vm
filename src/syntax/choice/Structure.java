@@ -4,7 +4,7 @@ import syntax.Edit;
 
 import javax.swing.*;
 
-public class Structure extends syntax.Structure
+public abstract class Structure extends syntax.Structure
 {
     public Structure()
     {
@@ -23,13 +23,11 @@ public class Structure extends syntax.Structure
 
     }
 
-    public Edit make()
-    {
-
-    }
 
     public JPanel display()
     {
+        JPanel result = new JPanel();
 
+        return result;
     }
 }

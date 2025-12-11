@@ -10,6 +10,6 @@ public class Init
         root.add(list);
         root.add(tree);
 
-        return new Edit(root);
+        return new syntax.choose.Edit(root);
     }
 }

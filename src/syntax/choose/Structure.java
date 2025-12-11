@@ -36,7 +36,10 @@ public  class Structure extends syntax.Structure
 
     public class Prompt extends utility.Prompt
     {
-        public Prompt(ArrayList<syntax.choice.Structure> list);
+        public Prompt(ArrayList<syntax.Structure> list)
+        {
+
+        }
     }
 
     @Override

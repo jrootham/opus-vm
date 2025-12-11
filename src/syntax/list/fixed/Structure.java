@@ -1,6 +1,8 @@
 package syntax.list.fixed;
 
-public class Structure extends syntax.list.Structure
+import syntax.Edit;
+
+public abstract class Structure extends syntax.list.Structure
 {
     public Structure()
     {
@@ -18,4 +20,5 @@ public class Structure extends syntax.list.Structure
     {
 
     }
+
 }
