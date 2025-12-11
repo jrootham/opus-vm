@@ -17,6 +17,6 @@ public class Structure extends syntax.list.Structure
     @Override
     public Edit make()
     {
-        return new
+        return new syntax.list.variable.Edit(this);
     }
 }

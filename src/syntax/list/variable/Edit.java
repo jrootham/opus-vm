@@ -1,6 +1,12 @@
 package syntax.list.variable;
 
-public class Edit extends E
+import syntax.Structure;
+
+public class Edit extends syntax.list.Edit
 {
+    public Edit(Structure parent)
+    {
+        super(parent);
+    }
 
 }
