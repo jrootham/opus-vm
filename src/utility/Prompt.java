@@ -1,47 +1,56 @@
-package structure;
-
-import utility.Named;
+package utility;
 
 import javax.swing.*;
-import javax.swing.JOptionPane;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 
-import static javax.swing.JOptionPane.*;
+import static javax.swing.JOptionPane.OK_CANCEL_OPTION;
+import static javax.swing.JOptionPane.OK_OPTION;
 
-public class Choose extends Named
+public class Prompt
 {
-    Choice choiceList;
+    String title;
 
-    public Choose(String name)
+    public Prompt(String title)
     {
-        super(name);
-        this.choiceList = null;
+        this.title = title;
     }
 
-    public void add(Choice choice)
+    public Object input()
     {
-        if (this.choiceList != null)
-        {
-            this.choiceList.add(choice);
-        }
-        else
-        {
-            this.choiceList = choice;
-        }
+        return new JLabel("Input");
     }
 
-    public JPanel display(edit.Choose choose)
+    boolean validate()
+    {
+        return true;
+    }
+
+    void set()
+    {
+        System.out.println("Setting value");
+    }
+
+    public void prompt() {
+        int result = JOptionPane.showConfirmDialog(null, input(), this.title, OK_CANCEL_OPTION);
+
+        if (result == OK_OPTION) {
+            if (validate()) {
+                set();
+            } else {
+                prompt();
+            }
+        }
+    }
+}
+
+/*
+    public JPanel prompt()
+
     {
         JPanel result = new JPanel();
         JButton button = new JButton(this.getName());
         result.add(button);
 
+        /*
         ActionListener listen = new ActionListener()
         {
             @Override
@@ -72,14 +81,10 @@ public class Choose extends Named
                 {
                     int pickIndex = dropDown.getSelectedIndex();
                     Choice pick = itemList.get(pickIndex);
-System.out.println(pick);
-  //                  choose.set(pick.make());
+                    System.out.println(pick);
+                    //                  tree.choose.set(pick.make());
                 }
             }
-        };
 
-        button.addActionListener(listen);
+         */
 
-        return result;
-    }
-}

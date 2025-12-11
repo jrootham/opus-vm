@@ -1,7 +1,5 @@
-import edit.Choose;
 
 import javax.swing.*;
-import javax.swing.tree.DefaultMutableTreeNode;
 
 public class bootstrap
 {
@@ -16,7 +14,7 @@ public class bootstrap
         frame.setSize(1000,700);
 
         Init init = new Init();
-        Choose tree = init.init();
+        syntax.choose.Edit tree = init.init();
 
         frame.getContentPane().add(tree.display());
         frame.setVisible(true);
