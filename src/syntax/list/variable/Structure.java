@@ -1,6 +1,6 @@
 package syntax.list.variable;
 
-public abstract class Structure extends syntax.Structure
+public class Structure extends syntax.list.Structure
 {
     public Structure()
     {

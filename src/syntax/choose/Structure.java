@@ -29,7 +29,7 @@ public  class Structure extends syntax.Structure
     {
         JPanel result = new JPanel();
 
-        Prompt prompt = new Prompt(this.list);
+        Prompt prompt = new Prompt("Choose", this.list);
 
         return result;
     }
