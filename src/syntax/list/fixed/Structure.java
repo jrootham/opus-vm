@@ -2,7 +2,7 @@ package syntax.list.fixed;
 
 import syntax.Edit;
 
-public abstract class Structure extends syntax.list.Structure
+public class Structure extends syntax.list.Structure
 {
     public Structure()
     {
