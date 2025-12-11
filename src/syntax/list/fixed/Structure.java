@@ -21,4 +21,8 @@ public class Structure extends syntax.list.Structure
 
     }
 
+    public Edit make()
+    {
+        return new syntax.list.fixed.Edit(this);
+    }
 }
