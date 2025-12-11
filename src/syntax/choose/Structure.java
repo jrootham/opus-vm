@@ -36,9 +36,13 @@ public  class Structure extends syntax.Structure
 
     public class Prompt extends utility.Prompt
     {
-        public Prompt(ArrayList<syntax.Structure> list)
-        {
+        public ArrayList<syntax.Structure> list;
 
+        public Prompt(String title, ArrayList<syntax.Structure> list)
+        {
+            super(title);
+
+            this.list = list;
         }
     }
 

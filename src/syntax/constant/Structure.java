@@ -6,26 +6,28 @@ import javax.swing.*;
 
 public class Structure extends syntax.Structure
 {
-    public Structure()
+    String value = null;
+
+    public Structure(String value)
     {
         super();
-        init();
+        init(value);
     }
 
-    public Structure(String name)
+    public Structure(String name, String value)
     {
         super(name);
-        init();
+        init(value);
     }
 
-    void init()
+    void init(String value)
     {
-
+        this.value = value;
     }
 
     public Edit make()
     {
-
+        return new syntax.constant.Edit(this.value);
     }
 
     public JPanel display()
