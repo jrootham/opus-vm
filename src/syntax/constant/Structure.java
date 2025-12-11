@@ -27,7 +27,7 @@ public class Structure extends syntax.Structure
 
     public Edit make()
     {
-        return new syntax.constant.Edit(this.value);
+        return new syntax.constant.Edit(this, this.value);
     }
 
     public JPanel display()
