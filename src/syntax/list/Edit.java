@@ -21,9 +21,12 @@ public class Edit extends syntax.Edit
     {
         JPanel result = new JPanel();
 
-        Iterator<syntax.Edit> iterator = list.iterator();
+System.out.println(this.list.size());
+        Iterator<syntax.Edit> iterator = this.list.iterator();
+        System.out.println(iterator.hasNext());
         while (iterator.hasNext())
         {
+            System.out.println("Looping");
             result.add(iterator.next().display());
         }
 

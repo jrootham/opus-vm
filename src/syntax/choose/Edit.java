@@ -22,6 +22,7 @@ public class Edit extends syntax.Edit
         }
         else
         {
+            System.out.println("Unpicked");
             return structure.display();
         }
     }

@@ -31,6 +31,10 @@ public  class Structure extends syntax.Structure
 
         Prompt prompt = new Prompt("Choose", this.list);
 
+        JButton button = new JButton("Choose");
+
+        result.add(button);
+
         return result;
     }
 

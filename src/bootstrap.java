@@ -14,9 +14,11 @@ public class bootstrap
         frame.setSize(1000,700);
 
         Init init = new Init();
-        syntax.choose.Edit tree = init.init();
+        syntax.Edit edit = init.init();
+System.out.println("main");
+        System.out.println(edit);
 
-        frame.getContentPane().add(tree.display());
+        frame.getContentPane().add(edit.display());
         frame.setVisible(true);
     }
 }

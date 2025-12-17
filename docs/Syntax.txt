@@ -1,0 +1,7 @@
+:Root "Variable :Field
+:Field "Choose :Constant :Name :Variable :Fixed :Choose
+:Constant "Constant string
+:Name "Name :Name
+:Variable "Variable :Name
+:Fixed "Fixed )fixed
+:Choose "Choose )Name

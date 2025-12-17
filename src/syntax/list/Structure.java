@@ -1,10 +1,11 @@
 package syntax.list;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public abstract class Structure extends syntax.Structure
 {
-    syntax.Structure list;
+    ArrayList<syntax.Structure> list;
 
     public Structure()
     {
@@ -20,7 +21,7 @@ public abstract class Structure extends syntax.Structure
 
     void init()
     {
-        list = null;
+        list = new ArrayList<>();
     }
 
     @Override
@@ -29,5 +30,10 @@ public abstract class Structure extends syntax.Structure
         JPanel result = new JPanel();
 
         return result;
+    }
+
+    public void add(syntax.Structure structure)
+    {
+        list.add(structure);
     }
 }
