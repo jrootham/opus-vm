@@ -1,12 +1,11 @@
-import syntax.choose.Structure;
+package main;
 
 public class Init
 {
     public syntax.Edit init()
     {
-        syntax.list.variable.Structure list = new syntax.list.variable.Structure("list");
-        Structure pick = new Structure("Field");
-        list.add(pick);
+        syntax.choose.Structure pick = new syntax.choose.Structure("Field");
+        syntax.list.variable.Structure list = new syntax.list.variable.Structure("list", pick);
 
         syntax.list.fixed.Structure constant = new syntax.list.fixed.Structure("Constant");
         syntax.list.fixed.Structure name = new syntax.list.fixed.Structure("Name");
@@ -20,7 +19,7 @@ public class Init
         pick.add(fixed);
         pick.add(choose);
 
-        syntax.list.variable.Structure root = new syntax.list.variable.Structure("Root");
+        syntax.list.variable.Structure root = new syntax.list.variable.Structure("Root", pick);
 
         root.add(list);
 

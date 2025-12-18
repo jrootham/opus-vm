@@ -5,20 +5,22 @@ import syntax.Structure;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.EventListener;
+import main.bootstrap;
 
 public class Edit extends syntax.list.Edit
 {
-    public Edit(Structure parent)
+    Structure template;
+
+    public Edit(Structure parent, Structure template)
     {
         super(parent);
+        this.template = template;
     }
 
     @Override
     public JPanel display()
     {
-        System.out.println("Before");
-
+        System.out.println("variable");
         JPanel result = super.display();
         JButton button = new JButton("Add");
         class Listener implements ActionListener
@@ -26,9 +28,8 @@ public class Edit extends syntax.list.Edit
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                System.out.println(structure);
-                list.add(structure.make());
-                System.out.println(list.size());
+                list.add(template.make());
+                bootstrap.refresh();
             }
         }
 

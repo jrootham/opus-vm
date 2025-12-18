@@ -12,20 +12,15 @@ public class Structure extends syntax.list.Structure
         this.template = template;
     }
 
-    public Structure(String name)
+    public Structure(String name, syntax.Structure template)
     {
         super(name);
         this.template = template;
     }
 
-    public syntax.Structure getTemplate()
-    {
-        return template;
-    }
-
     @Override
     public Edit make()
     {
-        return new syntax.list.variable.Edit(this);
+        return new syntax.list.variable.Edit(this, this.template);
     }
 }
