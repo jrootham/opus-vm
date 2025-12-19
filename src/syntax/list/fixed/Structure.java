@@ -2,23 +2,35 @@ package syntax.list.fixed;
 
 import syntax.Edit;
 
+import javax.swing.*;
+
 public class Structure extends syntax.list.Structure
 {
-    public Structure()
+//    public Structure()
+//    {
+//        super();
+//    }
+//
+//    public Structure(int direction)
+//    {
+//        super(direction);
+//    }
+//
+//    public Structure(String name)
+//    {
+//        super(name);
+//    }
+//
+    public Structure(String name, int direction)
     {
-        super();
-        init();
+        super(name, direction);
     }
 
-    public Structure(String name)
+    public Box display()
     {
-        super(name);
-        init();
-    }
+        Box result = new Box(this.direction);
 
-    void  init()
-    {
-
+        return result;
     }
 
     public Edit make()

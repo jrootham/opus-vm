@@ -17,9 +17,9 @@ public class Edit extends syntax.Edit
     }
 
     @Override
-    public JPanel display()
+    public Box display()
     {
-        JPanel result = new JPanel();
+        Box result = new Box(super.getParent().direction);
 
 System.out.println(this.list.size());
         Iterator<syntax.Edit> iterator = this.list.iterator();

@@ -9,14 +9,14 @@ public  class Structure extends syntax.Structure
 {
     ArrayList<syntax.Structure> list = new ArrayList<syntax.Structure>();
 
-    public Structure()
+//    public Structure()
+//    {
+//        super();
+//    }
+//
+    public Structure(String name, int direction)
     {
-        super();
-    }
-
-    public Structure(String name)
-    {
-        super(name);
+        super(name, direction);
     }
 
     public void add(syntax.Structure next)
@@ -25,15 +25,17 @@ public  class Structure extends syntax.Structure
     }
 
     @Override
-    public JPanel display()
+    public Box display()
     {
-        JPanel result = new JPanel();
+        Box result = new Box(this.direction);
 
         Prompt prompt = new Prompt("Choose", this.list);
 
         JButton button = new JButton("Choose");
 
         result.add(button);
+
+        result.add((Box.createGlue()));
 
         return result;
     }

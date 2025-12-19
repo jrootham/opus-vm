@@ -15,18 +15,20 @@ public class Edit extends syntax.Edit
     }
 
     @Override
-    public JPanel display()
+    public Box display()
     {
-        JPanel result = new JPanel();
-
         if (this.value != null)
         {
+            Box result = new Box(this.getParent().direction);
             result.add(new JLabel(this.value));
+            result.add(Box.createGlue());
+            return result;
         }
         else
         {
-            result.add(new JLabel("Value must not be null"));
+            return this.getParent().display();
         }
+
 
         return result;
     }

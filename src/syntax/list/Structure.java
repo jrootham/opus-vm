@@ -7,15 +7,21 @@ public abstract class Structure extends syntax.Structure
 {
     ArrayList<syntax.Structure> list;
 
-    public Structure()
+//    public Structure()
+//    {
+//        super();
+//        init();
+//    }
+//
+//    public Structure(int direction)
+//    {
+//        super(direction);
+//        init();
+//    }
+//
+    public Structure(String name, int direction)
     {
-        super();
-        init();
-    }
-
-    public Structure(String name)
-    {
-        super(name);
+        super(name, direction);
         init();
     }
 
@@ -25,9 +31,9 @@ public abstract class Structure extends syntax.Structure
     }
 
     @Override
-    public JPanel display()
+    public Box display()
     {
-        JPanel result = new JPanel();
+        Box result = new Box(this.direction);
 
         return result;
     }

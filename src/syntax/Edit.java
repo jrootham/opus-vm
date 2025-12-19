@@ -1,29 +1,20 @@
 package syntax;
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicSplitPaneUI;
-import java.awt.*;
 
 public abstract class Edit
 {
-    public Structure structure;
-    public FlowLayout layout;
+    public Structure parent;
 
-    public Edit(Structure structure, LayoutManager layout)
+    public Edit(Structure parent)
     {
-        this.structure = structure;
-        this.layout = layout;
+        this.parent = parent;
     }
 
-    public abstract JPanel display();
-
-    public static LayoutManager across()
+    public Structure getParent()
     {
-        return new BoxLayout(BoxLayout.X_AXIS);
+        return parent;
     }
 
-    public static LayoutManager down()
-    {
-        return new BoxLayout(BoxLayout.Y_AXIS);
-    }
+    public abstract Box display();
 }

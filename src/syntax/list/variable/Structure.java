@@ -6,15 +6,15 @@ public class Structure extends syntax.list.Structure
 {
     syntax.Structure template;
 
-    public Structure(syntax.Structure template)
+//    public Structure(syntax.Structure template)
+//    {
+//        super();
+//        this.template = template;
+//    }
+//
+    public Structure(String name, int direction, syntax.Structure template)
     {
-        super();
-        this.template = template;
-    }
-
-    public Structure(String name, syntax.Structure template)
-    {
-        super(name);
+        super(name, direction);
         this.template = template;
     }
 

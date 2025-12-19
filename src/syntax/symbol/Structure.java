@@ -7,15 +7,15 @@ public abstract class Structure extends syntax.Structure
 {
     Table   table;
 
-    public Structure(Table table)
+//    public Structure(Table table)
+//    {
+//        super();
+//        init(table);
+//    }
+//
+    public Structure(String name, int direction, Table table)
     {
-        super();
-        init(table);
-    }
-
-    public Structure(String name, Table table)
-    {
-        super(name);
+        super(name, direction);
         init(table);
     }
 
@@ -31,9 +31,9 @@ public abstract class Structure extends syntax.Structure
     }
     */
 
-    public JPanel display()
+    public Box display()
     {
-        JPanel result = new JPanel();
+        Box result = new Box(this.direction);
 
         return result;
     }

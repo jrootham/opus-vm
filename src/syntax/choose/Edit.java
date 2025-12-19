@@ -14,7 +14,7 @@ public class Edit extends syntax.Edit
     }
 
     @Override
-    public JPanel display()
+    public Box display()
     {
         if (this.choice != null)
         {
@@ -22,8 +22,7 @@ public class Edit extends syntax.Edit
         }
         else
         {
-            System.out.println("Unpicked");
-            return structure.display();
+            return this.getParent().display();
         }
     }
 }

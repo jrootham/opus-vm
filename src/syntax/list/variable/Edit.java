@@ -18,10 +18,10 @@ public class Edit extends syntax.list.Edit
     }
 
     @Override
-    public JPanel display()
+    public Box display()
     {
         System.out.println("variable");
-        JPanel result = super.display();
+        Box result = super.display();
         JButton button = new JButton("Add");
         class Listener implements ActionListener
         {

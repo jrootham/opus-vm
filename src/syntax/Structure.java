@@ -7,24 +7,34 @@ import java.awt.*;
 
 public abstract class Structure extends Named
 {
-    public static ACROSS = new BoxLayout(BoxLayout.X_AXIS);
-    public static DOWN = new BoxLayout(BoxLayout.Y_AXIS);
+    public static int ACROSS = BoxLayout.X_AXIS;
+    public static int DOWN = BoxLayout.Y_AXIS;
 
-    public LayoutManager    layout;
+    public int direction = ACROSS;
 
-    public Structure(LayoutManager layout
-    {
-        super();
-        this.layout = layout;
-    }
+//    public Structure()
+//    {
+//        super();
+//    }
+//
+//    public Structure(int direction)
+//    {
+//        super();
+//        this.direction = direction;
+//    }
+//
+//    public Structure(String name)
+//    {
+//        super(name);
+//    }
 
-    public Structure(String name, LayoutManager layout)
+    public Structure(String name, int direction)
     {
         super(name);
-        this.layout = layout;
+        this.direction = direction;
     }
 
-    public abstract JPanel display();
+    public abstract Box display();
 
     public abstract Edit make();
 }

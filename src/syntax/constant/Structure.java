@@ -8,20 +8,15 @@ public class Structure extends syntax.Structure
 {
     String value = null;
 
-    public Structure(String value)
+//    public Structure(String value)
+//    {
+//        super();
+//        init(value);
+//    }
+//
+    public Structure(String name, int direction, String value)
     {
-        super();
-        init(value);
-    }
-
-    public Structure(String name, String value)
-    {
-        super(name);
-        init(value);
-    }
-
-    void init(String value)
-    {
+        super(name, direction);
         this.value = value;
     }
 
@@ -30,9 +25,9 @@ public class Structure extends syntax.Structure
         return new syntax.constant.Edit(this, this.value);
     }
 
-    public JPanel display()
+    public Box display()
     {
-        JPanel result = new JPanel();
+        Box result = new Box(this.direction);
 
         return result;
     }
