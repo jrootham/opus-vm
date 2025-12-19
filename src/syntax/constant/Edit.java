@@ -28,8 +28,5 @@ public class Edit extends syntax.Edit
         {
             return this.getParent().display();
         }
-
-
-        return result;
     }
 }
