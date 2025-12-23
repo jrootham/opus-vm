@@ -1,5 +1,6 @@
 package syntax.choose;
 
+import utility.Named;
 import utility.Prompt;
 
 import javax.swing.*;
@@ -59,13 +60,13 @@ public class Edit extends syntax.Edit
 
     public class StructurePrompt extends utility.Prompt
     {
-        public JComboBox<syntax.Structure> dropDown;
+        public JComboBox<Named> dropDown;
 
         public StructurePrompt(String title, ArrayList<syntax.Structure> list)
         {
             super(title);
-
-            this.dropDown = new JComboBox<>(list.toArray(structureList));
+            Named[] nameList = new Named[list.size()];
+            this.dropDown = new JComboBox<>(list.toArray(nameList));
         }
 
         @Override public Object input()
@@ -73,13 +74,12 @@ public class Edit extends syntax.Edit
             return this.dropDown;
         }
 
-        @Override void set()
+        @Override public void set()
         {
-            syntax.Structure result = this.dropDown.getSelectedObjects();
+            int index = this.dropDown.getSelectedIndex();
+            syntax.Structure result = parent.list.get(index);
 
-            System.out.println(result);
-
-            choice = result;
+            choice = result.make();
         }
     }
 }

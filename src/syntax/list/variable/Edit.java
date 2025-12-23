@@ -9,18 +9,19 @@ import main.bootstrap;
 
 public class Edit extends syntax.list.Edit
 {
+    private syntax.list.variable.Structure parent;
     Structure template;
 
-    public Edit(Structure parent, Structure template)
+    public Edit(syntax.list.variable.Structure parent, Structure template)
     {
         super(parent);
+        this.parent = parent;
         this.template = template;
     }
 
     @Override
     public Box display()
     {
-        System.out.println("variable");
         Box result = super.display();
         JButton button = new JButton("Add");
         class Listener implements ActionListener

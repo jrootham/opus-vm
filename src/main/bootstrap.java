@@ -28,7 +28,6 @@ public class bootstrap
 
     public static void refresh()
     {
-        System.out.println("refresh");
         frame.getContentPane().removeAll();
         display();
     }
@@ -36,7 +35,6 @@ public class bootstrap
     public static void display()
     {
         frame.setVisible(true);
-        System.out.println(edit);
         frame.getContentPane().add(edit.display());
         frame.revalidate();
         frame.repaint();

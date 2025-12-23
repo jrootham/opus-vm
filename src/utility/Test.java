@@ -39,7 +39,6 @@ public class Test
             {
                 Prompt prompt = new TestPrompt("Test", value);
                 prompt.prompt();
-                System.out.println(value.value);
             }
         }
 
@@ -91,7 +90,7 @@ class TNamePrompt extends NamePrompt
     {
         int index = dropDown.getSelectedIndex();
         TNamed picked =  list.get(index);
-        System.out.println(picked.value);
+        JOptionPane.showMessageDialog(null, picked);
     }
 }
 
@@ -153,5 +152,6 @@ class TestPrompt extends Prompt
     public void set()
     {
         this.dest.value = this.dest.value + 1;
+        JOptionPane.showMessageDialog(null, new Integer(this.dest.value));
     }
 }
