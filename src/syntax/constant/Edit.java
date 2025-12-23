@@ -6,11 +6,12 @@ import javax.swing.*;
 
 public class Edit extends syntax.Edit
 {
+    syntax.constant.Structure parent;
     String value;
 
-    public Edit(Structure parent, String value)
+    public Edit( parent, String value)
     {
-        super(parent);
+        super();
         this.value = value;
     }
 

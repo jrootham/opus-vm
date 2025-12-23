@@ -34,7 +34,10 @@ public abstract class Structure extends Named
         this.direction = direction;
     }
 
-    public abstract Box display();
+    public Box display()
+    {
+        return new Box(BoxLayout.X_AXIS);
+    }
 
     public abstract Edit make();
 }
