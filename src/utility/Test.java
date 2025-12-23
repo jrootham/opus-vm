@@ -152,6 +152,6 @@ class TestPrompt extends Prompt
     public void set()
     {
         this.dest.value = this.dest.value + 1;
-        JOptionPane.showMessageDialog(null, new Integer(this.dest.value));
+        JOptionPane.showMessageDialog(null, Integer.valueOf(this.dest.value));
     }
 }
