@@ -1,10 +1,10 @@
-package syntax.constant;
+package syntax.placeholder;
 
 import javax.swing.*;
 
 public class Edit extends syntax.Edit
 {
-    syntax.constant.Structure parent;
+    syntax.placeholder.Structure parent;
     String value;
 
     public Edit(Structure parent, String value)

@@ -3,38 +3,35 @@ package syntax.list.fixed;
 import syntax.Edit;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Structure extends syntax.list.Structure
 {
-//    public Structure()
-//    {
-//        super();
-//    }
-//
-//    public Structure(int direction)
-//    {
-//        super(direction);
-//    }
-//
-//    public Structure(String name)
-//    {
-//        super(name);
-//    }
-//
+    public ArrayList<syntax.Structure> list;
+
     public Structure(String name, int direction)
     {
         super(name, direction);
+        this.list = new ArrayList<>();
     }
 
-    public Box display()
+    public void add(syntax.Structure item)
     {
-        Box result = new Box(this.direction);
-
-        return result;
+        this.list.add(item);
     }
 
     public Edit make()
     {
-        return new syntax.list.fixed.Edit(this);
+        syntax.list.fixed.Edit result = new syntax.list.fixed.Edit(this);
+
+        Iterator<syntax.Structure> iterator = this.list.iterator();
+
+        while (iterator.hasNext())
+        {
+            result.add(iterator.next().make());
+        }
+
+        return result;
     }
 }

@@ -29,10 +29,13 @@ public abstract class Prompt
     public void prompt() {
         int result = JOptionPane.showConfirmDialog(null, input(), this.title, OK_CANCEL_OPTION);
 
-        if (result == OK_OPTION) {
-            if (validate()) {
+        if (result == OK_OPTION)
+        {
+            if (validate())
+            {
                 set();
-            } else {
+            } else
+            {
                 prompt();
             }
         }

@@ -16,6 +16,11 @@ public class Edit extends syntax.Edit
         this.list = new ArrayList<syntax.Edit>();
     }
 
+    public void add(syntax.Edit item)
+    {
+        this.list.add(item);
+    }
+
     @Override
     public Box display()
     {

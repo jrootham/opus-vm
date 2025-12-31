@@ -15,11 +15,6 @@ public abstract class NamePrompt extends Prompt
         this.dropDown = new JComboBox<>(list.toArray(nameList));
     }
 
-//    @Override public void set()
-//    {
-//
-//    }
-
     @Override public Object input()
     {
         return this.dropDown;

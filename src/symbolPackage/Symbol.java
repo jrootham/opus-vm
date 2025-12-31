@@ -1,21 +1,22 @@
-package symbol;
+package symbolPackage;
 
 import java.util.UUID;
 
 public class Symbol
 {
     UUID id;
-    String name;
+    Table table;
 
-    public Symbol(String name)
+    public Symbol(Table table, String name)
     {
-        this.name = name;
+        this.table = table;
         this.id = UUID.randomUUID();
+        table.insert(this.id, name);
     }
 
     public void setName(String name)
     {
-        this.name = name;
+        this.table.rename(this.id, name);
     }
 
     public UUID getId()
@@ -25,6 +26,6 @@ public class Symbol
 
     public String getName()
     {
-        return name;
+        return this.table.getName(this.id);
     }
 }

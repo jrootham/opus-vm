@@ -4,7 +4,7 @@ import syntax.Edit;
 
 public class Structure extends syntax.list.Structure
 {
-    syntax.Structure template;
+    public syntax.Structure template;
 
 //    public Structure(syntax.Structure template)
 //    {
@@ -12,15 +12,20 @@ public class Structure extends syntax.list.Structure
 //        this.template = template;
 //    }
 //
-    public Structure(String name, int direction, syntax.Structure template)
+    public Structure(String name, int direction)
     {
         super(name, direction);
+        this.template = null;
+    }
+
+    public void setTemplate(syntax.Structure template)
+    {
         this.template = template;
     }
 
     @Override
     public Edit make()
     {
-        return new syntax.list.variable.Edit(this, this.template);
+        return new syntax.list.variable.Edit(this);
     }
 }

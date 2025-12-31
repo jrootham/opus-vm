@@ -78,8 +78,9 @@ public class Edit extends syntax.Edit
         {
             int index = this.dropDown.getSelectedIndex();
             syntax.Structure result = parent.list.get(index);
-
+System.out.println(result);
             choice = result.make();
+            System.out.println(choice);
         }
     }
 }

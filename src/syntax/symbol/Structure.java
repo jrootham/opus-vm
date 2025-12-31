@@ -1,6 +1,6 @@
 package syntax.symbol;
 
-import symbol.Table;
+import symbolPackage.Table;
 import javax.swing.*;
 
 public abstract class Structure extends syntax.Structure

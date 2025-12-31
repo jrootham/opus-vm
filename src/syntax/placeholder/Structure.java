@@ -1,4 +1,4 @@
-package syntax.constant;
+package syntax.placeholder;
 
 import syntax.Edit;
 
@@ -14,15 +14,15 @@ public class Structure extends syntax.Structure
 //        init(value);
 //    }
 //
-    public Structure(String name, int direction, String value)
+    public Structure(String name, int direction)
     {
         super(name, direction);
-        this.value = value;
+        this.value = null;
     }
 
     public Edit make()
     {
-        return new syntax.constant.Edit(this, this.value);
+        return new syntax.placeholder.Edit(this, this.value);
     }
 
     public Box display()
