@@ -32,6 +32,7 @@ public class Edit extends syntax.Edit
             result.add(iterator.next().display());
         }
 
+        result.add(Box.createGlue());
         return result;
     }
 }

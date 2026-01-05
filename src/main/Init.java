@@ -9,29 +9,39 @@ public class Init
     {
         Table table = new Table();
 
-//        syntax.placeholder.Structure constant = new syntax.placeholder.Structure("constant", Structure.ACROSS);
-        syntax.name.Structure name = new syntax.name.Structure("name", Structure.ACROSS, table);
-        syntax.list.variable.Structure variable = new syntax.list.variable.Structure("variableList", Structure.ACROSS);
-        syntax.list.fixed.Structure fixed = new syntax.list.fixed.Structure("fixedList", Structure.ACROSS);
-        syntax.choose.Structure choose = new syntax.choose.Structure("choose", Structure.ACROSS);
-
         syntax.choose.Structure pick = new syntax.choose.Structure("field", Structure.ACROSS);
 
-//        pick.add(constant);
+        syntax.list.fixed.Structure constant = statement("Constant", table);
+        constant.add(new syntax.constant.Structure("enter", Structure.ACROSS));
+
+        syntax.list.fixed.Structure name = statement("Name", table);
+
+        syntax.list.fixed.Structure variable = statement("Variable", table);
+
+        syntax.list.fixed.Structure fixed = statement("Fixed", table);
+
+        syntax.list.fixed.Structure choose = statement("Choose", table);
+
+        pick.add(constant);
         pick.add(name);
         pick.add(variable);
         pick.add(fixed);
         pick.add(choose);
 
-        syntax.name.Structure id = new syntax.name.Structure("id", Structure.ACROSS, table);
-
-        syntax.list.fixed.Structure statement = new syntax.list.fixed.Structure("statement", Structure.ACROSS);
-        statement.add(id);
-        statement.add(pick);
-
         syntax.list.variable.Structure root = new syntax.list.variable.Structure("root", Structure.DOWN);
-        root.setTemplate(statement);
+        root.setTemplate(pick);
 
         return root.make();
+    }
+
+    syntax.list.fixed.Structure statement(String name, Table table)
+    {
+        syntax.list.fixed.Structure statement = new syntax.list.fixed.Structure(name, Structure.ACROSS);
+        syntax.name.Structure id = new syntax.name.Structure("name", Structure.ACROSS, table);
+        statement.add(id);
+        syntax.constant.Structure label = new syntax.constant.Structure("label", Structure.ACROSS, name);
+        statement.add(label);
+
+        return statement;
     }
 }

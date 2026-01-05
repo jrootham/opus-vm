@@ -14,9 +14,10 @@ public class Symbol
         table.insert(this.id, name);
     }
 
-    public void setName(String name)
+    public Symbol(Table table, UUID id)
     {
-        this.table.rename(this.id, name);
+        this.table = table;
+        this.id = id;
     }
 
     public UUID getId()

@@ -1,8 +1,13 @@
 package symbolPackage;
 
+import utility.Named;
 import utility.Prompt;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.TreeMap;
+import java.util.UUID;
+import java.util.Vector;
 
 public class Edit
 {
@@ -42,9 +47,41 @@ public class Edit
         }
     }
 
-    public  Symbol select(syntax.name.Edit current)
+    public void select(syntax.name.Edit current)
     {
-        return null;
+        PromptPick prompt = new PromptPick("Select Name", current);
+
+        prompt.prompt();
+    }
+
+    class PromptPick extends Prompt
+    {
+        Vector<Pick> sorted;
+        public JComboBox<Pick> dropDown;
+        syntax.name.Edit current;
+
+        public PromptPick(String title, syntax.name.Edit current)
+        {
+            super(title);
+            Table table = current.getTable();
+            this.sorted = table.getSorted();
+            this.current = current;
+
+            this.dropDown = new JComboBox<>(this.sorted);
+        }
+
+        @Override public Object input()
+        {
+            return this.dropDown;
+        }
+
+        @Override
+        public void set()
+        {
+            Pick picked = this.dropDown.getItemAt(this.dropDown.getSelectedIndex());
+            this.current.set(picked.make());
+            main.bootstrap.refresh();
+        }
     }
 
     public static void rename(Symbol symbol)
