@@ -13,8 +13,8 @@ public class Table
 
     public Table()
     {
-        idName = new HashMap<UUID, String>();
-        nameId = new HashMap<String, UUID>();
+        idName = new HashMap<>();
+        nameId = new HashMap<>();
     }
 
     public boolean insert(UUID id, String name)

@@ -1,13 +1,7 @@
 package syntax.choose;
 
-import main.bootstrap;
-import syntax.Edit;
-import utility.Named;
-import utility.Prompt;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class Structure extends syntax.Structure

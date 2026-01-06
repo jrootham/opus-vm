@@ -1,12 +1,8 @@
 package symbolPackage;
 
-import utility.Named;
 import utility.Prompt;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.TreeMap;
-import java.util.UUID;
 import java.util.Vector;
 
 public class Edit
