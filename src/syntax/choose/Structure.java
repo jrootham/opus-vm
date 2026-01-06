@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Structure extends syntax.Structure
 {
-    public ArrayList<syntax.Structure> list = new ArrayList<syntax.Structure>();
+    public ArrayList<syntax.Structure> list = new ArrayList<>();
 
     public Structure(String name, int direction)
     {
