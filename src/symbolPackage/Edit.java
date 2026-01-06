@@ -37,6 +37,19 @@ public class Edit
         }
 
         @Override
+        public boolean validate()
+        {
+            String name = this.field.getText();
+            boolean found = current.getTable().hasName(name);
+            if (found)
+            {
+                JOptionPane.showMessageDialog(null, name + " already exists");
+            }
+
+            return !found;
+        }
+
+        @Override
         public void set()
         {
             String name = this.field.getText();

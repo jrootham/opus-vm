@@ -14,11 +14,6 @@ public class Structure extends syntax.Structure
 {
     public ArrayList<syntax.Structure> list = new ArrayList<syntax.Structure>();
 
-//    public Structure()
-//    {
-//        super();
-//    }
-//
     public Structure(String name, int direction)
     {
         super(name, direction);

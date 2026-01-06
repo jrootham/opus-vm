@@ -15,12 +15,27 @@ public class Init
         constant.add(new syntax.constant.Structure("enter", Structure.ACROSS));
 
         syntax.list.fixed.Structure name = statement("Name", table);
+        name.add(new syntax.name.Structure("name", Structure.ACROSS, table));
 
         syntax.list.fixed.Structure variable = statement("Variable", table);
+        variable.add(new syntax.name.Structure("ListName", Structure.ACROSS, table));
 
         syntax.list.fixed.Structure fixed = statement("Fixed", table);
 
+        syntax.list.variable.Structure list = new syntax.list.variable.Structure("FixedParameters", Structure.ACROSS);
+
+        syntax.choose.Structure template = new syntax.choose.Structure("template", Structure.ACROSS);
+        template.add(new syntax.constant.Structure("templateConstant", Structure.ACROSS));
+        template.add(new syntax.name.Structure("templateName", Structure.ACROSS, table));
+
+        list.setTemplate(template);
+
+        fixed.add(list);
+
         syntax.list.fixed.Structure choose = statement("Choose", table);
+        syntax.list.variable.Structure choiceList = new syntax.list.variable.Structure("choiceList", Structure.ACROSS);
+        choiceList.setTemplate(new syntax.name.Structure("choice", Structure.ACROSS, table));
+        choose.add(choiceList);
 
         pick.add(constant);
         pick.add(name);

@@ -19,7 +19,7 @@ public abstract class Prompt
         return new JLabel("Input");
     }
 
-    boolean validate()
+    public boolean validate()
     {
         return true;
     }

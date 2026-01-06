@@ -35,6 +35,11 @@ public class Table
         return result;
     }
 
+    public boolean hasName(String name)
+    {
+        return this.nameId.containsKey(name);
+    }
+
     public boolean rename(UUID id, String newName)
     {
         boolean result;
