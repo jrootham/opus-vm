@@ -2,8 +2,6 @@ package syntax.constant;
 
 import syntax.Edit;
 
-import javax.swing.*;
-
 public class Structure extends syntax.Structure
 {
     public Structure(String name, int direction)
