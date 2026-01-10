@@ -9,26 +9,28 @@ import java.awt.event.ActionListener;
 public class Edit extends syntax.Edit
 {
     syntax.constant.Structure parent;
+    String value;
 
     public Edit(Structure parent)
     {
         super();
         this.parent = parent;
+        this.value = null;
     }
 
     @Override public Box display()
     {
         Box result = new Box(this.parent.direction);
 
-        if (parent.value != null)
+        if (this.value != null)
         {
-            result.add(new JLabel(parent.value));
+            result.add(new JLabel(this.value));
             result.add(Box.createGlue());
         }
         else
         {
             JButton button = new JButton("Fill");
-            button.addActionListener(new Listener(this.parent));
+            button.addActionListener(new Listener(this));
             result.add(button);
             result.add(Box.createGlue());
         }
@@ -38,17 +40,17 @@ public class Edit extends syntax.Edit
 
     class Listener implements ActionListener
     {
-        Structure parent;
+        Edit current;
 
-        Listener(Structure parent)
+        Listener(Edit current)
         {
-            this.parent = parent;
+            this.current = current;
         }
 
         @Override
         public void actionPerformed(ActionEvent event)
         {
-            Prompt prompt = new Prompt(this.parent);
+            Prompt prompt = new Prompt(this.current);
             prompt.prompt();
             main.bootstrap.refresh();
         }
@@ -56,18 +58,18 @@ public class Edit extends syntax.Edit
 
     class Prompt extends utility.TextPrompt
     {
-        Structure parent;
+        Edit current;
 
-        Prompt(Structure parent)
+        Prompt(Edit current)
         {
             super("Enter Constant");
-            this.parent = parent;
+            this.current = current;
         }
 
         @Override
         public void set()
         {
-            parent.value = getText();
+            current.value = getText();
         }
     }
 }
