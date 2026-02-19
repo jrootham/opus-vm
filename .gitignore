@@ -30,3 +30,4 @@ bin/
 .DS_Store
 /exportToHTML/structure.md.html
 /docs/structure.pdf
+/tsave.txt
