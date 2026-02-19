@@ -20,7 +20,12 @@ public class Symbol
         this.id = id;
     }
 
-    public UUID getId()
+    public Table getTable()
+    {
+        return this.table;
+    }
+
+     public UUID getId()
     {
         return id;
     }

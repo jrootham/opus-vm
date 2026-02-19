@@ -1,9 +1,8 @@
 package syntax;
 
-import utility.Named;
-
 import javax.swing.*;
-import java.awt.*;
+import java.util.Set;
+import java.util.UUID;
 
 public abstract class Structure extends Named
 {
@@ -12,27 +11,28 @@ public abstract class Structure extends Named
 
     public int direction = ACROSS;
 
-//    public Structure()
-//    {
-//        super();
-//    }
-//
-//    public Structure(int direction)
-//    {
-//        super();
-//        this.direction = direction;
-//    }
-//
-//    public Structure(String name)
-//    {
-//        super(name);
-//    }
-
     public Structure(String name, int direction)
     {
         super(name);
+
         this.direction = direction;
     }
+
+    public Structure(UUID id, String name, int direction)
+    {
+        super(id, name);
+
+        this.direction = direction;
+    }
+
+    public abstract String getType();
+
+    @Override
+    public void saveContext(Set<Syntax>  visited)
+    {
+        System.out.println(this.getName());
+    }
+
 
     public Box display()
     {

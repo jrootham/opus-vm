@@ -1,8 +1,11 @@
 package syntax.list;
 
+import syntax.Syntax;
+
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Set;
 
 public class Edit extends syntax.Edit
 {
@@ -14,6 +17,24 @@ public class Edit extends syntax.Edit
         super();
         this.parent = parent;
         this.list = new ArrayList<syntax.Edit>();
+    }
+
+    @Override
+    public syntax.Structure getParentBase()
+    {
+        return this.parent;
+    }
+
+    @Override public void saveData(Set<Syntax> visited)
+    {
+        Iterator<syntax.Edit> iterator = list.iterator();
+
+        while (iterator.hasNext())
+        {
+            syntax.Edit item = iterator.next();
+            this.connect(item);
+            item.save(visited);
+        }
     }
 
     public void add(syntax.Edit item)

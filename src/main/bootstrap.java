@@ -1,15 +1,14 @@
 package main;
 
-import syntax.Edit;
+import global.Program;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class bootstrap
 {
 
     public static JFrame frame;
-    public static Edit edit;
+    public static Program program;
 
     public static void main
     (
@@ -22,7 +21,7 @@ public class bootstrap
         frame.setSize(1000,700);
 
         Init init = new Init();
-        edit = init.init();
+        program = init.init();
         display();
     }
 
@@ -35,7 +34,7 @@ public class bootstrap
     public static void display()
     {
         frame.setVisible(true);
-        frame.getContentPane().add(edit.display());
+        frame.getContentPane().add(program.display());
         frame.revalidate();
         frame.repaint();
     }

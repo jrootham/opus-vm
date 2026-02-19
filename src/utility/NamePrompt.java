@@ -1,5 +1,7 @@
 package utility;
 
+import syntax.Named;
+
 import javax.swing.*;
 import java.util.ArrayList;
 

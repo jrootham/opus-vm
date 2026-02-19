@@ -1,12 +1,13 @@
 package syntax.choose;
 
-import utility.Named;
-import utility.Prompt;
+import syntax.Named;
+import syntax.Syntax;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class Edit extends syntax.Edit
 {
@@ -19,6 +20,21 @@ public class Edit extends syntax.Edit
 
         this.parent = parent;
         choice = null;
+    }
+
+    @Override
+    public syntax.Structure getParentBase()
+    {
+        return this.parent;
+    }
+
+    @Override public void saveData(Set<Syntax> visited)
+    {
+        if (this.choice != null)
+        {
+            this.connect(this.choice);
+            this.choice.save(visited);
+        }
     }
 
     @Override

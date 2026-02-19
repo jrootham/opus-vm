@@ -8,13 +8,27 @@ import java.util.function.BiConsumer;
 
 public class Table
 {
+    UUID id;
     HashMap<UUID, String>  idName;
     HashMap<String, UUID> nameId;
 
     public Table()
     {
-        idName = new HashMap<>();
-        nameId = new HashMap<>();
+        this.id = UUID.randomUUID();
+        this.idName = new HashMap<>();
+        this.nameId = new HashMap<>();
+    }
+
+    void write(UUID id, String name)
+    {
+        System.out.println("symbol " + name + " " + this.id.toString() + " " + id.toString());
+    }
+
+    public void save()
+    {
+        System.out.println("Table " + this.id.toString());
+        idName.forEach((id, name) -> {write(id, name);});
+        System.out.println("End table");
     }
 
     public boolean insert(UUID id, String name)

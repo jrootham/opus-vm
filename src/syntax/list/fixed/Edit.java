@@ -1,5 +1,7 @@
 package syntax.list.fixed;
 
+import syntax.Syntax;
+
 import javax.swing.*;
 
 public class Edit extends syntax.list.Edit
@@ -10,6 +12,12 @@ public class Edit extends syntax.list.Edit
     {
         super(parent);
         this.parent = parent;
+    }
+
+    @Override
+    public syntax.Structure getParentBase()
+    {
+        return this.parent;
     }
 
     public Box display()

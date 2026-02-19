@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import main.bootstrap;
+import syntax.Syntax;
 
 public class Edit extends syntax.list.Edit
 {
@@ -13,6 +14,12 @@ public class Edit extends syntax.list.Edit
     {
         super(parent);
         this.parent = parent;
+    }
+
+    @Override
+    public syntax.Structure getParentBase()
+    {
+        return this.parent;
     }
 
     @Override

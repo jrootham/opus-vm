@@ -1,10 +1,12 @@
 package syntax.list.fixed;
 
 import syntax.Edit;
+import syntax.Syntax;
 
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Set;
 
 public class Structure extends syntax.list.Structure
 {
@@ -14,6 +16,24 @@ public class Structure extends syntax.list.Structure
     {
         super(name, direction);
         this.list = new ArrayList<>();
+    }
+
+    @Override public String getType()
+    {
+        return "fixed";
+    }
+
+    @Override
+    public void saveData(Set<Syntax> visited)
+    {
+        Iterator<syntax.Structure> iterator = list.iterator();
+
+        while (iterator.hasNext())
+        {
+            syntax.Structure item = iterator.next();
+            this.connect(item);
+            item.save(visited);
+        }
     }
 
     public void add(syntax.Structure item)

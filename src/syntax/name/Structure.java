@@ -2,6 +2,9 @@ package syntax.name;
 
 import symbolPackage.Table;
 import syntax.Edit;
+import syntax.Syntax;
+
+import java.util.Set;
 
 public class Structure extends syntax.Structure
 {
@@ -12,6 +15,17 @@ public class Structure extends syntax.Structure
         super(name, direction);
 
         this.table = table;
+    }
+
+    @Override public String getType()
+    {
+        return "name";
+    }
+
+    @Override
+    public void saveData(Set<Syntax> visited)
+    {
+
     }
 
     public  Edit make()

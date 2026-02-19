@@ -1,6 +1,9 @@
 package syntax.list.variable;
 
 import syntax.Edit;
+import syntax.Syntax;
+
+import java.util.Set;
 
 public class Structure extends syntax.list.Structure
 {
@@ -10,6 +13,17 @@ public class Structure extends syntax.list.Structure
     {
         super(name, direction);
         this.template = template;
+    }
+
+    @Override public String getType()
+    {
+        return "variable";
+    }
+
+    @Override public void saveData(Set<Syntax> visited)
+    {
+        connect(template);
+        template.save(visited);
     }
 
     @Override

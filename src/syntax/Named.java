@@ -1,16 +1,26 @@
-package utility;
+package syntax;
 
-public class Named
+import java.util.UUID;
+
+public abstract class Named extends Syntax
 {
     String name;
 
     public Named()
     {
+        super();
         this.name = null;
     }
 
     public Named(String name)
     {
+        super();
+        this.name = name;
+    }
+
+    public Named(UUID id, String name)
+    {
+        super(id);
         this.name = name;
     }
 

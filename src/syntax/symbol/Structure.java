@@ -1,18 +1,14 @@
 package syntax.symbol;
 
 import symbolPackage.Table;
+import syntax.Syntax;
+import java.util.Set;
 import javax.swing.*;
 
 public abstract class Structure extends syntax.Structure
 {
     Table   table;
 
-//    public Structure(Table table)
-//    {
-//        super();
-//        init(table);
-//    }
-//
     public Structure(String name, int direction, Table table)
     {
         super(name, direction);
@@ -24,12 +20,16 @@ public abstract class Structure extends syntax.Structure
         this.table = table;
     }
 
-    /*
-    public Edit make()
+    @Override public String getType()
+    {
+        return "symbol";
+    }
+
+    @Override
+    public void saveData(Set<Syntax> visited)
     {
 
     }
-    */
 
     public Box display()
     {

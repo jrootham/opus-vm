@@ -2,10 +2,12 @@ package syntax.name;
 
 import symbolPackage.Symbol;
 import symbolPackage.Table;
+import syntax.Syntax;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Set;
 
 public class Edit extends syntax.Edit
 {
@@ -30,6 +32,12 @@ public class Edit extends syntax.Edit
     public void set(Symbol symbol)
     {
         this.symbol = symbol;
+    }
+
+    @Override
+    public syntax.Structure getParentBase()
+    {
+        return this.parent;
     }
 
     public Box display()
@@ -58,6 +66,12 @@ public class Edit extends syntax.Edit
 
         result.add(Box.createHorizontalStrut(Edit.ENDSPACE));
         return result;
+    }
+
+    @Override
+    public void saveData(Set<Syntax> visited)
+    {
+        connect(this.symbol);
     }
 
     class Create implements ActionListener

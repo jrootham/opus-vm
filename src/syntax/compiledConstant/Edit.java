@@ -1,6 +1,9 @@
-package syntax.compile;
+package syntax.compiledConstant;
+
+import syntax.Syntax;
 
 import javax.swing.*;
+import java.util.Set;
 
 public class Edit extends syntax.Edit
 {
@@ -12,6 +15,15 @@ public class Edit extends syntax.Edit
         this.parent = parent;
     }
 
+    @Override public void saveData(Set<Syntax> visited)
+    {
+    }
+
+    @Override
+    public syntax.Structure getParentBase() {
+        return this.parent;
+    }
+
     @Override public Box display()
     {
         Box result = new Box(this.parent.direction);
@@ -21,4 +33,5 @@ public class Edit extends syntax.Edit
 
         return result;
     }
+
 }

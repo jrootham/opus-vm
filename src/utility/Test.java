@@ -1,10 +1,14 @@
 package utility;
 
+import syntax.Named;
+import syntax.Syntax;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Set;
 
 public class Test
 {
@@ -112,6 +116,22 @@ class TNamed extends Named
     {
         super(name);
         this.value = value;
+    }
+
+    @Override
+    public String getType() {
+        return "";
+    }
+
+    @Override
+    public void saveData(Set<Syntax> visited)
+    {
+
+    }
+
+    @Override
+    public void saveContext(Set<Syntax> visited) {
+
     }
 }
 

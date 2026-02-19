@@ -1,11 +1,12 @@
 package main;
 
+import global.Program;
 import symbolPackage.Table;
 import syntax.Structure;
 
 public class Init
 {
-    public syntax.Edit init()
+    public Program init()
     {
         Table table = new Table();
 
@@ -28,7 +29,7 @@ public class Init
 
         fixed.add(list);
 
-        syntax.list.fixed.Structure choose = statement("Choose", table);
+        syntax.list.fixed.Structure choose = statement("choose", table);
         syntax.name.Structure choiceTemplate = new syntax.name.Structure("choice", Structure.ACROSS, table);
 
         syntax.list.variable.Structure choiceList
@@ -42,7 +43,7 @@ public class Init
 
         syntax.list.variable.Structure root = new syntax.list.variable.Structure("root", Structure.DOWN, pick);
 
-        return root.make();
+        return new Program(table, root);
     }
 
     syntax.list.fixed.Structure statement(String name, Table table)
@@ -50,7 +51,7 @@ public class Init
         syntax.list.fixed.Structure statement = new syntax.list.fixed.Structure(name, Structure.ACROSS);
         syntax.name.Structure id = new syntax.name.Structure("name", Structure.ACROSS, table);
         statement.add(id);
-        syntax.compile.Structure label = new syntax.compile.Structure("label", Structure.ACROSS, name);
+        syntax.compiledConstant.Structure label = new syntax.compiledConstant.Structure("label", Structure.ACROSS, name);
         statement.add(label);
 
         return statement;

@@ -1,8 +1,12 @@
 package syntax.constant;
 
+import syntax.Syntax;
+
 import javax.swing.*;
+import javax.swing.plaf.PanelUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Set;
 
 public class Edit extends syntax.Edit
 {
@@ -16,7 +20,22 @@ public class Edit extends syntax.Edit
         this.value = null;
     }
 
-    @Override public Box display()
+    @Override public void saveData(Set<Syntax> visited)
+    {
+        if (this.value != null)
+        {
+            System.out.println(this.value + " " + this.getType());
+        }
+    }
+
+    @Override
+    public syntax.Structure getParentBase()
+    {
+        return this.parent;
+    }
+
+    @Override
+    public Box display()
     {
         Box result = new Box(this.parent.direction);
 
